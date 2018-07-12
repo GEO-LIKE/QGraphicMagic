@@ -10,8 +10,7 @@ QCustomGraphicsScene::QCustomGraphicsScene(QObject *parent)
 
 void QCustomGraphicsScene::initDrawing()
 {
-    qDebug() << "Initialization";
-
+//    qDebug() << "Initialization";
     isReleased = false;
     lineMode = LineMode::SEGEMNT_MODE;
     length = 0;
@@ -30,7 +29,7 @@ void QCustomGraphicsScene::setItemType(QCustomGraphicsScene::ItemType type)
 
 void QCustomGraphicsScene::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    qDebug() << isDrawing;
+//    qDebug() << isDrawing;
     if(!isDrawing){
         QGraphicsScene::mousePressEvent(event);
     }
@@ -44,7 +43,7 @@ void QCustomGraphicsScene::mousePressEvent(QGraphicsSceneMouseEvent *event)
         if(itemType == POINT)
             initDrawing();
         length += 1;
-        qDebug() << length;
+//        qDebug() << length;
     }
 //    QGraphicsScene::mousePressEvent(event);
 

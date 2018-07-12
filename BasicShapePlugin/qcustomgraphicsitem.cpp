@@ -1,10 +1,10 @@
 #include "qcustomgraphicsitem.h"
-#include <QDebug>
+//#include <QDebug>
 
 QCustomGraphicsItem::QCustomGraphicsItem(ItemType type, QGraphicsItem *parent)
     :QGraphicsItem(parent)
 {
-    qDebug() << type;
+//    qDebug() << type;
     mType = type;
     setFlag(ItemIsSelectable);
     setFlag(ItemIsMovable);
@@ -16,7 +16,7 @@ void QCustomGraphicsItem::paint(QPainter *painter, const QStyleOptionGraphicsIte
     Q_UNUSED(widget);
     painter->setPen(QPen(QBrush(Qt::red),2));
     painter->setBrush(QBrush(Qt::lightGray));
-    painter->setRenderHint(QPainter::Antialiasing);
+    painter->setRenderHint(QPainter::HighQualityAntialiasing);
 
     switch(mType){
     case ITEM_POINT:

@@ -3,6 +3,7 @@
 
 #include "shapeplugininterface.h"
 #include "plugindialog.h"
+#include "ifile.h"
 #include <QPainter>
 #include <QToolBar>
 #include <QMainWindow>

@@ -1,4 +1,5 @@
 # QGraphicsMagic
+version 0.2.1
 Drawing Basic Shapes with Qt
 
 Usage:

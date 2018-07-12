@@ -8,7 +8,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    connect(this,SIGNAL(pluginLoaded()),this,SLOT(on_pluginLoaded()));
     getPluginList();
     menu = menuBar()->addMenu(tr("&About"));
     QAction *aboutPluginAction = menu->addAction("About Plugin");
@@ -39,6 +38,12 @@ void MainWindow::getPluginList()
                 shape_plugin->initialization(this);
 //                pluginLoader.unload();
                 emit pluginLoaded();
+            }
+            else if(dynamic_cast<IFile*>(pluginLoader.instance())){
+                pluginList.append(plugin.fileName());
+                IFile *fileIO_plugin =
+                        dynamic_cast<IFile*>(pluginLoader.instance());
+                fileIO_plugin->Initilization(this);
             }
             else{
                 QMessageBox::warning(
